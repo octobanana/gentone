@@ -1,0 +1,79 @@
+gentone
+  Generate a tone from a note or frequency.
+
+Usage
+  gentone [Hz|A-G[b#]0-8] [--colour=<on|off|auto>] [-l|--loop] [--char=<char>]
+  [--a4=<Hz>] [--speed=<m/s>] [-w|--wave=<sine|square|triangle|saw>]
+  [-t|--time=<seconds>] [-c|--channels=<1|2|mono|stereo|left|right>]
+  [-r|--rate=<Hz>] [-a|--amplitude=<0.0-1.0>] [-o|--output=<file>]
+  gentone [--colour=<on|off|auto>] -h|--help
+  gentone [--colour=<on|off|auto>] -v|--version
+  gentone [--colour=<on|off|auto>] --license
+
+Options
+  --a4=<Hz> [440]
+    The standard pitch frequency used for the A above middle C.
+  -a, --amplitude=<0.0-1.0> [1]
+    The max amplitude of the generated tone.
+  -c, --channels=<1|2|mono|stereo|left|right> [1]
+    The number of channels to use, 1 is mono, 2 is stereo.
+  --char=<char> [*]
+    The character used to draw the wave diagram.
+  --colour=<on|off|auto> [auto]
+    Print the program output with colour either on, off, or auto based on if
+    stdout is a tty, the default value is 'auto'.
+  -h, --help
+    Print the help output.
+  --license
+    Print the program license.
+  -l, --loop
+    Loop the generated tone.
+  -o, --output=<file> []
+    Save the generated tone to a file.
+  -r, --rate=<Hz> [44100]
+    The sample rate used to generate the tone.
+  --sos=<m/s> [343]
+    The speed of sound.
+  -t, --time=<seconds> [0]
+    The duration of the tone in seconds.
+  -v, --version
+    Print the program version.
+  -w, --wave=<sine|square|triangle|saw> [sine]
+    The type of waveform used to generate the tone.
+
+Examples
+  gentone
+    Run the program.
+  gentone --time 3 A4
+    Generate a 3 second mono sine wave using the musical note A4.
+  gentone --time 3 --channels 2 --wave triangle 440
+    Generate a 3 second stereo triangle wave with a frequency of 440Hz.
+  gentone --time 1 --output sine.wav C#7
+    Generate a 1 second mono sine wave using the musical note C#7 and save the
+    tone to the output file 'sine.wav'.
+  gentone --help --colour=off
+    Print the help output, without colour.
+  gentone --help
+    Print the help output.
+  gentone --version
+    Print the program version.
+  gentone --license
+    Print the program license.
+
+Exit Codes
+  0
+    normal
+  1
+    error
+
+Meta
+  The version format is 'major.minor.patch (day.month.year)'.
+
+Repository
+  https://github.com/octobanana/gentone.git
+
+Homepage
+  https://octobanana.com/software/gentone
+
+Author
+  Brett Robinson (octobanana) <octobanana.dev@gmail.com>
