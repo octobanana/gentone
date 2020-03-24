@@ -342,13 +342,7 @@ void draw_wave(Wave const& wave, Data const& data, Track const* track) {
     std::size_t const wave_period {static_cast<std::size_t>(std::round(wave.sample_rate / data.freq))};
     // TODO if screen size is smaller than wave period, scroll animate the wave
     for (std::size_t x = 0; x < width && x < wave_size && x < wave_period; ++x) {
-      double s {0};
-      if (data.chan == Channel::Right) {
-        s = wave.samples[(1 + x * static_cast<std::size_t>(wave.num_channels)) + (data.chan == Channel::Right ? 1 : 0)];
-      }
-      else {
-        s = wave.samples[(x * static_cast<std::size_t>(wave.num_channels)) + (data.chan == Channel::Right ? 1 : 0)];
-      }
+      double s = wave.samples[(x * static_cast<std::size_t>(wave.num_channels)) + (data.chan == Channel::Right ? 1 : 0)];
       std::size_t const y {static_cast<std::size_t>(std::round(scale(s, -32768.0, 32767.0, 0.0, static_cast<double>(height))))};
       if (use_color) {
         OB::Prism::HSLA color {0, 100, 50, 1.0};
