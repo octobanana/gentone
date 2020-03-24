@@ -61,7 +61,7 @@ inline void program_init(OB::Parg& pg);
 
 inline void program_init(OB::Parg& pg)
 {
-  pg.name("gentone").version("0.1.1 (23.03.2020)");
+  pg.name("gentone").version("0.1.2 (24.03.2020)");
   pg.description("Generate a tone from a note or frequency.");
 
   pg.usage("[Hz|A-G[b#]0-8] [--colour=<on|off|auto>] [-l|--loop] [--char=<char>] [--a4=<Hz>] [--speed=<m/s>] [-w|--wave=<sine|square|triangle|saw>] [-t|--time=<seconds>] [-c|--channels=<1|2|mono|stereo|left|right>] [-r|--rate=<Hz>] [-a|--amplitude=<0.0-1.0>] [-o|--output=<file>]");
